@@ -15,3 +15,216 @@ Tags: one-column, custom-menu, custom-logo, featured-image
 
 
 */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply some basic styling to the header section */
+header {
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    padding: 10px; /* Add some padding for spacing */
+}
+
+/* Style the top bar within the header */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style the logo and searchbox within the top bar */
+.logo {
+    font-size: 24px; /* Adjust the font size */
+    font-weight: bold; /* Make it bold */
+}
+
+.searchbox {
+    /* Add your styling for the search box here */
+}
+
+/* Style the main menu within the header */
+.main-menu {
+    /* Add styling for the menu items here */
+    list-style: none; /* Remove bullet points for list items */
+    padding: 0; /* Remove default padding */
+}
+
+.main-menu li {
+    display: inline; /* Display menu items horizontally */
+    margin-right: 20px; /* Add spacing between menu items */
+}
+
+/* Style links within the menu */
+.main-menu a {
+    text-decoration: none; /* Remove underline */
+    color: #fff; /* Link color */
+    /* Add additional styles for links here */
+}
+
+.menu-main-menu-container {
+    display: flex;
+    justify-content: center;
+
+    ul {
+        display: flex;
+        gap: 30px;
+    }
+}
+
+
+/* Style the outer container */
+#content {
+    max-width: 1200px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add some padding */
+}
+
+/* Style the primary content area */
+#primary {
+    background-color: #f0f0f0; /* Background color for the content area */
+    padding: 20px; /* Add some padding */
+}
+
+/* Style the main content area */
+#main {
+    display: flex;
+    flex-wrap: wrap; /* Allow sections to wrap to the next line if needed */
+}
+
+/* Style individual sections */
+.section {
+    flex: 1; /* Distribute space evenly among sections */
+    margin: 10px; /* Add some margin between sections */
+    padding: 20px; /* Add some padding */
+    background-color: #fff; /* Background color for sections */
+    border: 1px solid #ddd; /* Add a border to sections */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    text-align: center; /* Center text */
+    transition: transform 0.2s ease-in-out; /* Add a smooth hover effect */
+}
+
+.section:hover {
+    transform: scale(1.05); /* Scale up the section on hover */
+}
+
+/* Style specific sections */
+.hero {
+    background-color: #007bff; /* Customize the hero background color */
+    color: #fff; /* Text color for the hero */
+}
+
+.services {
+    background-color: #28a745; /* Customize the services background color */
+    color: #fff; /* Text color for services */
+}
+
+.home-blog {
+    background-color: #ffc107; /* Customize the blog background color */
+    color: #333; /* Text color for the blog */
+}
+
+
+
+
+/* Style the footer */
+.site-footer {
+    background-color: #333; /* Background color for the footer */
+    color: #fff; /* Text color for the footer */
+    padding: 20px; /* Add some padding */
+    text-align: center; /* Center-align the content */
+}
+
+/* Add a subtle border or separator above the footer */
+.site-footer::before {
+    content: "";
+    display: block;
+    border-top: 1px solid #ddd; /* Border color and style */
+    margin: 10px 0; /* Margin for spacing */
+}
+
+/* Style footer links */
+.site-footer a {
+    color: #fff; /* Link text color */
+    text-decoration: none; /* Remove underlines from links */
+    margin: 0 10px; /* Add spacing between links */
+}
+
+/* Style footer links on hover */
+.site-footer a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+/* Center-align the footer content on smaller screens */
+@media screen and (max-width: 768px) {
+    .site-footer {
+        text-align: center;
+    }
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+.menu {
+    display: flex;
+    
+    li {
+        list-style-type: none;
+    }
+}
+
+.menu-icon {
+    display: none;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    left: 50%;
+    top: 75px;
+    cursor: pointer;
+
+    span {
+        display: block;
+        width: 44px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        border-radius: 3px;
+        background: #cdcdcd;
+    }
+}
+.bar1,
+.bar2,
+.bar3 {
+    transition: 0.5s ease-out;
+}
+
+@media (max-width: 767px) {
+    .menu-icon {
+        display: block;
+    }
+    .menu {
+        position: absolute;
+        left: -999px;
+        text-align: left;
+        transition: 0.5s ease-in-out;
+    }
+    .show-dropdown {
+        left: 0;
+        flex-direction: column;
+        background: red;
+        width: 100%;
+    }
+    .animate-button .bar1 {
+        transform: rotate(45deg) translate(-4px, 4px);
+    }
+
+    .animate-button .bar2 {
+        transform: rotate(135deg) translate(-5px, 8px);
+    }
+    .animate-button .bar3 {
+        display: none;
+    }
+}
