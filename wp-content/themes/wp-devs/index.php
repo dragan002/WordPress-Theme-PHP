@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="">
+<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" class="header_img">
 <div id="content" class="site-content">
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
@@ -13,6 +13,7 @@
                 ?>
                 <article>
                     <h2><?php the_title(); ?></h2>
+                    <?php the_post_thumbnail(array(275, 275)); ?>
                     <div class="meta-info">
                         <p>Posted in <?php echo get_the_date(); ?> by the <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></p>
                         <p>Categories: <?php the_category(' ') ?></p>

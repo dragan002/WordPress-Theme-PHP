@@ -130,7 +130,7 @@ header {
     margin-inline: 190px;
 }
 
-img {
+.header_img {
     width: 100%;
     height: auto;
 }
