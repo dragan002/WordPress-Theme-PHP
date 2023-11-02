@@ -6,9 +6,20 @@ function wpdevs_load_scripts() {
 }
 add_action('wp_enqueue_scripts','wpdevs_load_scripts');
 
-register_nav_menus(
-    array(
-        'wp_devs_main_menu'=> 'Main Menu',
-        'wp_devs_footer_menu'=> 'Footer Menu'
-    )
-);
+
+
+function wpdevs_config() {
+    register_nav_menus(
+        array(
+            'wp_devs_main_menu'=> 'Main Menu',
+            'wp_devs_footer_menu'=> 'Footer Menu'
+        )
+    );
+    $args = array(
+        'height' => 225,
+        'width'=> 1920
+    );
+    
+    add_theme_support('custom-header', $args);
+}
+add_action('after_setup_theme', 'wpdevs_config', 0);

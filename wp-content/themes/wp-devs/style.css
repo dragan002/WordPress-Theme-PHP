@@ -130,6 +130,11 @@ header {
     margin-inline: 190px;
 }
 
+img {
+    width: 100%;
+    height: auto;
+}
+
 
 
 /* Style the footer */
