@@ -126,9 +126,7 @@ header {
     background-color: #ffc107; /* Customize the blog background color */
     color: #333; /* Text color for the blog */
 }
-.blog-items {
-    margin-inline: 190px;
-}
+
 
 .header_img {
     width: 100%;
@@ -176,8 +174,13 @@ header {
     margin-left: auto;
     margin-right: auto;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
+}
+.container-services {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 .main-menu {
     margin: 0 auto;
@@ -215,6 +218,7 @@ header {
 }
 
 
+
 article h2 {
     text-align: center;
     margin-block: 30px;
@@ -246,4 +250,19 @@ article h2 {
     .animate-button .bar3 {
         display: none;
     }
+}
+
+aside {
+    background: #ffdede;
+}
+.widget-wrapper {
+    padding-inline: 20px;
+    padding-block: 10px;
+}
+.widget-wrapper ul li {
+    list-style-type: none;
+}
+
+.widget-wrapper ul li a {
+    text-decoration: none;
 }
