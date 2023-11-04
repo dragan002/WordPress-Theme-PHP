@@ -28,7 +28,9 @@
                         comments_template();
                     }
                 ?>
-            <?php endwhile; ?>
+            <?php endwhile;
+            the_posts_pagination();
+             ?>
         </div>
     </div>
 </div>
