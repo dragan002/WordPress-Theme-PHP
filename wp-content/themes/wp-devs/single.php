@@ -13,6 +13,12 @@
                     </div>
                     <?php the_excerpt(); ?>
                 </article>
+
+                <?php 
+                    if(comments_open() || get_comments_number()) {
+                        comments_template();
+                    }
+                ?>
             <?php endwhile; ?>
         </div>
     </div>
