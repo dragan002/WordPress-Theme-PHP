@@ -28,11 +28,11 @@ function wpdevs_config() {
         'flex-height'=> true,
         'flex-width'=> true
     ));
+    add_theme_support('title-tag');
 }
 add_action('after_setup_theme', 'wpdevs_config', 0);
 
 add_action('widgets_init', 'wpdevs_sidebars');
-
 function wpdevs_sidebars() {
     register_sidebar(
         array(
