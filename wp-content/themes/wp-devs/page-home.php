@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 <div id="content" class="site-content">
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main">
+    <div id="primary" class="content-area">, 
+        <main id="main" class="site-main">, 
             <?php 
-                $hero_title = get_theme_mod('set_hero_title', 'Please, type some title');
-                $hero_subtitle = get_theme_mod('set_hero_subtitle', 'Please type some subtitle');
-                $hero_button_link = get_theme_mod('set_hero_button_linnk', '#');
-                $hero_button_text = get_theme_mod('set_hero_button_text', 'Learn More');
+                $hero_title = get_theme_mod('set_hero_title', __('Please, type some title', 'wp-devs' ));
+                $hero_subtitle = get_theme_mod('set_hero_subtitle', __('Please type some subtitle', 'wp-devs'));
+                $hero_button_link = get_theme_mod('set_hero_button_link', '#');
+                $hero_button_text = get_theme_mod('set_hero_button_text', __('Learn More', 'wp-devs'));
                 $hero_height = get_theme_mod('set_hero_height', 800);
                 $hero_background = wp_get_attachment_url(get_theme_mod('set_hero_background'));
 
@@ -23,7 +23,7 @@
             </div>
             </section>
             <section class="services">
-                <h2>Services</h2>
+                <h2><?php _e('Services', 'wp-devs'); ?></h2>
                 <div class="container-services">
                     <div class="services-item">
                         <?php if (is_active_sidebar('service-1')) {
@@ -43,7 +43,7 @@
                 </div>
             </section>
             <section class="home-blog">
-                <h2>Latest news</h2>
+                <h2><?php _e('Latest news', 'wp-devs'); ?></h2>
                 <div class="container">
                     <?php  
 
@@ -68,7 +68,7 @@ get_template_part('parts/content', 'latest-news');
                         wp_reset_postdata();
                     else:
                     ?>
-                    <p>Nothing yet to be displayed</p>
+                     <p><?php _e('Nothing yet to be displayed', 'wp-devs'); ?></p>
                     <?php endif; ?>
                 </div>
             </section>

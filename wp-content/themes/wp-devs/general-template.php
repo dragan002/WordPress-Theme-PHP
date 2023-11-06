@@ -24,7 +24,7 @@
                     endwhile;
                 else:
                 ?>
-                <p>Nothing yet to be displayed</p>
+                <p><?php e_('Nothing yet to be displayed', 'wp-devs'); ?></p>
                 <?php endif; ?>
                     </div>
                 </div>

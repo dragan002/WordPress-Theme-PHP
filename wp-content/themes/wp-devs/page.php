@@ -20,7 +20,6 @@
                 <?php
                     endwhile;
                 ?>
-                <p>Nothing yet to be displayed</p>
                     </div>
                 </div>
         </main>
