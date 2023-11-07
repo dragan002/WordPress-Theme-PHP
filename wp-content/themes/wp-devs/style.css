@@ -382,3 +382,10 @@ a img.aligncenter {
 .overlay {
     width: 100vw;
 }
+.author {
+    display: flex;
+}
+
+.author_image {
+    width: 28rem;
+}

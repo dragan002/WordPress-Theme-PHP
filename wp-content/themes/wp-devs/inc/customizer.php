@@ -29,6 +29,77 @@ function wpdevs_customizer( $wp_customize ) {
         )
     );
 
+    //new panel
+    $wp_customize->add_section(
+        'author_section',
+        array(
+            'title' => __('Author Section', 'wp-devs'),
+            'description'=> __('This section will be displayed on the page-blog', 'wp-devs'),
+        )
+    );
+
+    $wp_customize->add_setting(
+        'set_author_section',
+        array(
+            'type'=> 'theme_mod',
+            'default' => 'No',
+            'sanitize_callback' => 'sanitize_custom_option'
+        )
+    );
+
+    $wp_customize->add_control(
+        'set_author_section',
+        array(
+            'label' => __('Display this section?'),
+            'section' => 'author_section',
+            'type'=> 'select',
+            'choices'=> array('No' => 'No', 'Yes' => 'Yes')
+        )
+    );
+
+    //text for author
+    $wp_customize->add_setting(
+        'set_author_text',
+        array(
+            'default' => 'this is text for default',
+            'sanitize_callback' => 'sanitize_text_field'
+        )
+    );
+
+    $wp_customize->add_control(
+        'set_author_text',
+        array(
+            'label' => __('Type author text', 'wp-devs'),
+            'description'=> __('This text will show author information', 'wp-devs'),
+            'section'=> 'author_section',
+        )
+    );
+
+    function sanitize_custom_option($input) {
+        return($input === 'No') ? 'No' : 'Yes';
+    }
+
+
+    //Author image
+    $wp_customize->add_setting(
+        'set_author_image',
+        array(
+            'type'=> 'theme_mod',
+            'sanitize_callback' => 'absint'
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Media_Control(
+            $wp_customize,
+            'set_author_image',
+            array(
+                'label'=> __('Author image','wp-devs'),
+                'mime_type' => 'image',
+                'section' => 'author_section'
+            )
+        )
+    );
     //2 Hero
 
     $wp_customize->add_section(
@@ -228,6 +299,8 @@ function wpdevs_customizer( $wp_customize ) {
             'type' => 'text',
         )
     );
+
+    //New panel
 }
 
 add_action('customize_register', 'wpdevs_customizer');

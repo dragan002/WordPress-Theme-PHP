@@ -9,6 +9,8 @@
                 $hero_button_text = get_theme_mod('set_hero_button_text', __('Learn More', 'wp-devs'));
                 $hero_height = get_theme_mod('set_hero_height', 800);
                 $hero_background = wp_get_attachment_url(get_theme_mod('set_hero_background'));
+                $author_image = wp_get_attachment_url(get_theme_mod('set_author_image'));
+                $author_text = get_theme_mod('set_author_text', __('Type author text', 'wp-devs'));
 
             ?>
                 <div class="container">
@@ -22,6 +24,17 @@
                 </div>
             </div>
             </section>
+
+            <?php if(get_theme_mod('set_author_section') === "Yes") { ?>
+            <div class="author">
+                <img src="<?php echo esc_url($author_image); ?>" alt="">
+                <div class="author-text">
+                    <p><?php echo esc_html($author_text); ?></p>
+                </div>
+            </div>
+            <?php }  ?>
+
+            <!-- ===================SERVICES============= -->
             <section class="services">
                 <h2><?php esc_html_e('Services', 'wp-devs'); ?></h2>
                 <div class="container-services">
