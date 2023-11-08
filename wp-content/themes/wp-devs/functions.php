@@ -49,8 +49,27 @@ function wpdevs_config() {
     add_theme_support('responsive-embeds');
     add_theme_support('editor-styles');
     add_editor_style('editor-style.css');
+
+    // block editor - without this code some style can't be applied in editor, try example with quote block with border on the left side
+    add_theme_support('wp-block-editor');
 }
 add_action('after_setup_theme', 'wpdevs_config', 0);
+
+function wpdevs_register_block_styles() {
+    wp_register_style('wpdevs-block-style', get_template_directory_uri() . '/block-style.css');
+    register_block_style(
+        'core/quote',
+        array(
+            'name' => 'red-quote',
+            'label' => 'Red quote',
+            'is_default' => false,
+            'style_handle' => 'wpdevs-block-style'
+        )
+    );
+}
+add_action('init', 'wpdevs_register_block_styles');
+
+
 
 add_action('widgets_init', 'wpdevs_sidebars');
 function wpdevs_sidebars() {
